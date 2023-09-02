@@ -11,7 +11,7 @@ jobs:
     name: Publish sfcsrg Website
     env:
       MDBOOK_VERSION: 0.4.10
-      MDBOOK_BIB_VERSION: 0.0.5      
+      MDBOOK_BIB_VERSION: 0.0.6      
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
