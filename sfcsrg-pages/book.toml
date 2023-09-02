@@ -7,3 +7,9 @@ title = "San Francisco Cognitive Sciences Reading Group"
 
 [output.html]
 default-theme = "light"
+
+[preprocessor.bib]
+bibliography = "bibliography.bib"
+title="Library/References" # Custom title
+hb-tpl = "render/sfcsrg_references.hbs"
+css = "render/sfcsrg_style.css"

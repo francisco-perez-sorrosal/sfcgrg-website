@@ -1,6 +1,6 @@
 # Sessions
 
-## Session 1 (2023-03-07) "Being You"
+## Session 1 (2023-03-07) "Being You" @@seth2021
 
 **Author/s** *Anil Seth*
 
@@ -16,7 +16,7 @@
 
 [Paper Link](https://www.pnas.org/doi/pdf/10.1073/pnas.2105646118)
 
-## Session 3 (2023-05-16) "Mind in Motion: How Action Shapes Thought"
+## Session 3 (2023-05-16) "Mind in Motion: How Action Shapes Thought" @@tverskyb2019
 
 **Author/s** *Barbara Tversky*
 
@@ -32,7 +32,7 @@
 
 [Paper Link](https://arxiv.org/abs/1604.00289)
 
-## Session 5 (2023-08-15) "The Experience Machine"
+## Session 5 (2023-08-15) "The Experience Machine" @@clark2023
 
 **Author/s** *Andy Clark*
 

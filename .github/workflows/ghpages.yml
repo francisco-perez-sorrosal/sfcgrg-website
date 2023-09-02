@@ -11,13 +11,15 @@ jobs:
     name: Publish sfcsrg Website
     env:
       MDBOOK_VERSION: 0.4.10
+      MDBOOK_BIB_VERSION: 0.0.5      
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install mdbook
+      - name: Install mdbook + mdbook-bib
         run: |
           curl -LsSf https://github.com/rust-lang/mdBook/releases/download/v${MDBOOK_VERSION}/mdbook-v${MDBOOK_VERSION}-x86_64-unknown-linux-gnu.tar.gz | tar xzf -
+          curl -LsSf https://github.com/francisco-perez-sorrosal/mdbook-bib/releases/download/v${MDBOOK_BIB_VERSION}/mdbook-bib-v${MDBOOK_BIB_VERSION}-linux-amd64.tar.gz | tar xzf -
           echo $(pwd) >> $GITHUB_PATH
       - name: Run mdbook
         run: |
