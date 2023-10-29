@@ -1,0 +1,787 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>San Francisco Cognitive Sciences Reading Group</title>
+                <meta name="robots" content="noindex" />
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="favicon.svg">
+                        <link rel="shortcut icon" href="favicon.png">
+                <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+                <link rel="stylesheet" href="css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="sessions.html"><strong aria-hidden="true">2.</strong> Sessions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="upcoming_sessions.html"><strong aria-hidden="true">2.1.</strong> Upcoming</a></li><li class="chapter-item expanded "><a href="past_sessions.html"><strong aria-hidden="true">2.2.</strong> Past</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Notes</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="notes/session_1.html"><strong aria-hidden="true">3.1.</strong> Session 1</a></li><li class="chapter-item expanded "><a href="notes/session_2.html"><strong aria-hidden="true">3.2.</strong> Session 2</a></li><li class="chapter-item expanded "><a href="notes/session_3.html"><strong aria-hidden="true">3.3.</strong> Session 3</a></li><li class="chapter-item expanded "><a href="notes/session_4.html"><strong aria-hidden="true">3.4.</strong> Session 4</a></li><li class="chapter-item expanded "><a href="notes/session_5.html"><strong aria-hidden="true">3.5.</strong> Session 5</a></li></ol></li><li class="chapter-item expanded "><a href="bibliography.html">Library/References</a></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">San Francisco Cognitive Sciences Reading Group</h1>
+
+                    <div class="right-buttons">
+                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p><img src="images/sfcsrg-octopus.webp" alt="CSOctopus" /></p>
+<h1 id="overview"><a class="header" href="#overview">Overview</a></h1>
+<p>This is a group for anyone in the Bay Area who’s interested in cognitive science.</p>
+<p>Our plan is devilishly simple:</p>
+<ol>
+<li>Pick a book or paper related to the field</li>
+<li>Read it</li>
+<li>Meet to discuss it - hopefully in real life, somewhere central San Francisco.</li>
+</ol>
+<p>All are welcome, and in order to keep it this way we will probably steer away from expert academic literature and be pitched a little more towards enthusiastic amateurs. But let’s see how it goes.</p>
+<p>If you'd like to propose something to read, please add it (and/or upvote existing suggestions) to <a href="https://docs.google.com/spreadsheets/d/1UtA_ONDgMsVSo0eaIZjvJbJ0c5TfmTFYTscC1x9B7BI/edit#gid=0">this sheet</a>.</p>
+<h2 id="main-group-related-links"><a class="header" href="#main-group-related-links">Main Group-related Links</a></h2>
+<ol>
+<li><a href="https://www.meetup.com/san-francisco-cognitive-science-meetup-group/">Meetup Group Webpage</a> - For attendance, gathering</li>
+<li><a href="https://docs.google.com/spreadsheets/d/1UtA_ONDgMsVSo0eaIZjvJbJ0c5TfmTFYTscC1x9B7BI/edit#gid=0">Papers/Books Proposals</a></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sessions"><a class="header" href="#sessions">Sessions</a></h1>
+<h2 id="a-hrefupcoming_sessionshtmlupcoming-sessionsa--a-hrefpast_sessionshtmlpast-sessionsa"><a class="header" href="#a-hrefupcoming_sessionshtmlupcoming-sessionsa--a-hrefpast_sessionshtmlpast-sessionsa"><a href="upcoming_sessions.html">Upcoming Sessions</a> / <a href="past_sessions.html">Past Sessions</a></a></h2>
+<h2 id="notes"><a class="header" href="#notes">Notes</a></h2>
+<p><a href="https://docs.google.com/document/d/10njTy58O7uMlI0O2tezKY7Iepf-kTBZusdg4q85erpQ/edit#heading=h.54u8ki1xp2e7">Original Notes by Tom</a></p>
+<p><a href="notes/session_1.html">Sessions 1</a></p>
+<p><a href="notes/session_2.html">Sessions 2</a></p>
+<p><a href="notes/session_3.html">Sessions 3</a></p>
+<p><a href="notes/session_4.html">Sessions 4</a></p>
+<p><a href="notes/session_5.html">Sessions 5</a></p>
+<p><a href="notes/session_6.html">Sessions 6</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="upcoming"><a class="header" href="#upcoming">Upcoming</a></h1>
+<h3 id="session-8-2023-11-14-tbd"><a class="header" href="#session-8-2023-11-14-tbd">Session 8 (2023-11-14) TBD</a></h3>
+<p><strong>Author/s</strong> <em>TBD</em></p>
+<p><a href="">Meetup link</a></p>
+<p><a href="">Paper Link</a></p>
+<p><a href="./notes/session_8.html">Notes</a></p>
+<h3 id="session-9-2023-12-05-tbd"><a class="header" href="#session-9-2023-12-05-tbd">Session 9 (2023-12-05) &quot;TBD&quot;</a></h3>
+<p><strong>Author/s</strong> <em>TBD</em></p>
+<p><a href="">Meetup link</a></p>
+<p><a href="">Book Link</a></p>
+<p><a href="./notes/session_9.html">Notes</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sessions-1"><a class="header" href="#sessions-1">Sessions</a></h1>
+<h2 id="session-1-2023-03-07-being-you-a-hrefbibliographyhtmlseth2021seth2021a"><a class="header" href="#session-1-2023-03-07-being-you-a-hrefbibliographyhtmlseth2021seth2021a">Session 1 (2023-03-07) &quot;Being You&quot; [<a href="bibliography.html#seth2021">seth2021</a>]</a></h2>
+<p><strong>Author/s</strong> <em>Anil Seth</em></p>
+<p><a href="https://www.meetup.com/san-francisco-cognitive-science-meetup-group/events/291413888/">Meetup link</a></p>
+<p><a href="https://www.amazon.com/Being-You-New-Science-Consciousness/dp/1524742872">Book Link</a></p>
+<p><a href="./notes/session_1.html">Notes</a></p>
+<h2 id="session-2-2023-04-18-the-neural-architecture-of-language-integrative-modeling-converges-on-predictive-processing-a-hrefbibliographyhtmlschrimpf_neural_2021schrimpf_neural_2021a"><a class="header" href="#session-2-2023-04-18-the-neural-architecture-of-language-integrative-modeling-converges-on-predictive-processing-a-hrefbibliographyhtmlschrimpf_neural_2021schrimpf_neural_2021a">Session 2 (2023-04-18) &quot;The neural architecture of language: Integrative modeling converges on predictive processing&quot; [<a href="bibliography.html#schrimpf_neural_2021">schrimpf_neural_2021</a>]</a></h2>
+<p><a href="https://www.meetup.com/san-francisco-cognitive-science-meetup-group/events/292570342/">Meetup link</a></p>
+<p><a href="https://www.pnas.org/doi/pdf/10.1073/pnas.2105646118">Paper Link</a></p>
+<p><a href="./notes/session_2.html">Notes</a></p>
+<h2 id="session-3-2023-05-16-mind-in-motion-how-action-shapes-thought-a-hrefbibliographyhtmltverskyb2019tverskyb2019a"><a class="header" href="#session-3-2023-05-16-mind-in-motion-how-action-shapes-thought-a-hrefbibliographyhtmltverskyb2019tverskyb2019a">Session 3 (2023-05-16) &quot;Mind in Motion: How Action Shapes Thought&quot; [<a href="bibliography.html#tverskyb2019">tverskyb2019</a>]</a></h2>
+<p><strong>Author/s</strong> <em>Barbara Tversky</em></p>
+<p><a href="https://www.meetup.com/san-francisco-cognitive-science-meetup-group/events/292570396/">Meetup link</a></p>
+<p><a href="https://www.amazon.com/Mind-Motion-Action-Shapes-Thought/dp/046509306X">Book Link</a></p>
+<p><a href="./notes/session_3.html">Notes</a></p>
+<h2 id="session-4-2023-06-20-building-machines-that-learn-and-think-like-people-a-hrefbibliographyhtmllake_building_2016lake_building_2016a"><a class="header" href="#session-4-2023-06-20-building-machines-that-learn-and-think-like-people-a-hrefbibliographyhtmllake_building_2016lake_building_2016a">Session 4 (2023-06-20) &quot;Building machines that learn and think like people&quot; [<a href="bibliography.html#lake_building_2016">lake_building_2016</a>]</a></h2>
+<p><strong>Author/s</strong> <em>Tenenbaum and Gershman, et al.</em></p>
+<p><a href="https://www.meetup.com/san-francisco-cognitive-science-meetup-group/events/293684204/">Meetup link</a></p>
+<p><a href="https://arxiv.org/abs/1604.00289">Paper Link</a></p>
+<p><a href="./notes/session_4.html">Notes</a></p>
+<h2 id="session-5-2023-08-15-the-experience-machine-a-hrefbibliographyhtmlclark2023clark2023a"><a class="header" href="#session-5-2023-08-15-the-experience-machine-a-hrefbibliographyhtmlclark2023clark2023a">Session 5 (2023-08-15) &quot;The Experience Machine&quot; [<a href="bibliography.html#clark2023">clark2023</a>]</a></h2>
+<p><strong>Author/s</strong> <em>Andy Clark</em></p>
+<p><a href="https://www.meetup.com/san-francisco-cognitive-science-meetup-group/events/293684215/">Meetup link</a></p>
+<p><a href="https://www.amazon.com/Experience-Machine-Minds-Predict-Reality/dp/1524748455">Book Link</a></p>
+<p><a href="./notes/session_5.html">Notes</a></p>
+<h2 id="session-6-2023-09-26-whatever-next-predictive-brains-situated-agents-and-the-future-of-cognitive-science-a-hrefbibliographyhtmlclark_whatever_2013clark_whatever_2013a"><a class="header" href="#session-6-2023-09-26-whatever-next-predictive-brains-situated-agents-and-the-future-of-cognitive-science-a-hrefbibliographyhtmlclark_whatever_2013clark_whatever_2013a">Session 6 (2023-09-26) &quot;Whatever next? Predictive brains, situated agents, and the future of cognitive science&quot; [<a href="bibliography.html#clark_whatever_2013">clark_whatever_2013</a>]</a></h2>
+<p><strong>Author/s</strong> <em>Andy Clark + Others</em></p>
+<p><a href="https://www.meetup.com/san-francisco-cognitive-science-meetup-group/events/294399059/">Meetup link</a></p>
+<p><a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/33542C736E17E3D1D44E8D03BE5F4CD9/S0140525X12000477a.pdf/div-class-title-whatever-next-predictive-brains-situated-agents-and-the-future-of-cognitive-science-div.pdf">Paper Link</a></p>
+<!-- [Notes](./notes/session_6.md) -->
+<h2 id="session-7-2023-10-17-seven-and-a-half-lessons-about-the-brain-a-hrefbibliographyhtmlbarret2020barret2020a"><a class="header" href="#session-7-2023-10-17-seven-and-a-half-lessons-about-the-brain-a-hrefbibliographyhtmlbarret2020barret2020a">Session 7 (2023-10-17) &quot;Seven and a Half Lessons About the Brain&quot; [<a href="bibliography.html#barret2020">barret2020</a>]</a></h2>
+<p><strong>Author/s</strong> <em>Lisa Feldman Barret</em></p>
+<p><a href="https://www.meetup.com/san-francisco-cognitive-science-meetup-group/events/295498934/">Meetup link</a></p>
+<p><a href="https://www.amazon.com/Seven-Half-Lessons-About-Brain/dp/035864559X/ref=sr_1_3?crid=MP8NKCU5JSAQ&amp;keywords=feldman+barrett&amp;qid=1691874145&amp;s=books&amp;sprefix=feldmand+barre%2Cstripbooks%2C318&amp;sr=1-3">Book Link</a></p>
+<!-- [Notes](./notes/session_7.md) -->
+<div style="break-before: page; page-break-before: always;"></div><h1 id="session-1-being-you"><a class="header" href="#session-1-being-you">Session 1: &quot;Being You&quot;</a></h1>
+<h2 id="march-7-2023--rowzzy-labs"><a class="header" href="#march-7-2023--rowzzy-labs">March 7 2023 @ Rowzzy Labs</a></h2>
+<h2 id="attendees-dylan-tom-david-jose-iris"><a class="header" href="#attendees-dylan-tom-david-jose-iris">Attendees: Dylan, Tom, David, Jose, Iris</a></h2>
+<h3 id="toms-notes"><a class="header" href="#toms-notes">Tom’s notes</a></h3>
+<p>We all had trouble with Karl Friston
+Is predictive coding the same thing as Free Energy Principle?
+Jose: concern with questions over materialism in early chapters
+Karl Popper talks about places where you can get emergent phenomena
+Unpredictability of life emerging
+Stewart Koffman - cells change their environment, so we're constantly changing our possibilities.
+All atoms contain an event horizon (Dylan)
+Brian Cox, media punditry vs research
+The relationship between Lempel-viz Compression and Integrated Information Theory ?
+Materialism to physicalism to functionalism (Tom didn’t get the differences)
+Donald Hoffman and controlled hallucination
+Anaesthetics. During sleep the Thalamus is disconnected from the brain. Thalamus is thus potentially the seat of consciousness?
+Understanding mechanisms of anaesthesia as a route to understanding consciousness
+Seth’s examination of IIT doesn't cover recent work on memory storage in hippocampus
+Hippocampus replaying &quot;ripples&quot; of memories when going to sleep</p>
+<p>Book and paper recommendations:</p>
+<p>The Predictive Mind, Jacob Hohwy (Dave)
+The Growth of Biological Thought, Ernst Meyer
+Do No Harm, Henry Marsh (Tom)
+Designing with the Mind in Mind (Iris)</p>
+<p>How the meeting went, thoughts for the next one:</p>
+<p>Jose likes this level of detail for reading
+Dylan interested in plotting all scientists, understanding relationships between their work.
+David: wondering whether a book-length thing is right, or an accessible survey papers? Josh Tenenbaum, Samuel Gershwin?
+Iris: keener for a shorter read; maybe something to summarize easily and a book?
+We might alternate book and paper, to give more time for reading the former and let us go deep on a topic. (General agreement)
+David: try pulling out a basket of topics we identify at the beginning
+Dylan: Outline the concepts around consciousness - emergence?
+Tom: map out the area and create a historical doc with recommendations etc
+Jose: schizophrenia and psychosis as a follow-up?
+Stanislav Dehan
+Meet in ~a month (Tom can’t do earlier)
+Need a follow-up survey (Tom)</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="session-2-the-neural-architecture-of-language-integrative-modeling-converges-on-predictive-processing"><a class="header" href="#session-2-the-neural-architecture-of-language-integrative-modeling-converges-on-predictive-processing">Session 2: &quot;The neural architecture of language: Integrative modeling converges on predictive processing&quot;</a></h1>
+<h2 id="april-18-2023--rowzzy-labs"><a class="header" href="#april-18-2023--rowzzy-labs">April 18 2023 @@ Rowzzy Labs</a></h2>
+<h2 id="attendees-dylan-tom-francesco-julio-maddie-remote-arvind-briefly"><a class="header" href="#attendees-dylan-tom-francesco-julio-maddie-remote-arvind-briefly">Attendees: Dylan, Tom, Francesco, Julio, Maddie (remote), Arvind (briefly)</a></h2>
+<p>We discussed The neural architecture of language: Integrative modeling converges on predictive processing</p>
+<h3 id="toms-notes-1"><a class="header" href="#toms-notes-1">Tom’s notes</a></h3>
+<ul>
+<li>
+<p>J: What were the datasets?</p>
+</li>
+<li>
+<p>T: Read out loud or not?</p>
+</li>
+<li>
+<p>M: datasets were presented incrementally, they looked at blood oxygen levels changing in an MRI during reading. FMRI measures blood oxygen levels.</p>
+</li>
+<li>
+<p>T: curious about the resolution of this...</p>
+</li>
+<li>
+<p>J: mm maybe? It's being picked up outside the skull. But it's amazing the vascular session of the brain is sending blood to parts of the brain that need it.</p>
+</li>
+<li>
+<p>J: We have ANNs (ChatGPT) producing beautiful language, no rules of grammar.</p>
+</li>
+<li>
+<p>D: They put WordNet into GPT - which has semantic relations</p>
+</li>
+<li>
+<p>J: How do children learn grammar? Just like ANNs can learn by prediction - is this how we learn? Rules arise from NWP</p>
+</li>
+<li>
+<p>F: Yes, this is why NLP has been upturned by these models.</p>
+</li>
+<li>
+<p>T: The primacy of NLP as a task in the paper was interesting.</p>
+</li>
+<li>
+<p>T: The architecture without training results were also interesting - echoes of Chomsky's inbuilt grammars?</p>
+</li>
+<li>
+<p>General agreement this is crazy</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>F: adding layers to ANNs often brings performance</p>
+</li>
+<li>
+<p>M: the ones that are untrained without weights seem to have an important architecture. Do the networks have a goal to get to?</p>
+</li>
+<li>
+<p>F: When they're trained, yes... this is called self supervised learning.</p>
+</li>
+<li>
+<p>M: So there's feedback?</p>
+</li>
+<li>
+<p>F: Yes. There's a fwd and backward pass...</p>
+</li>
+<li>
+<p>T: but these are untrained networks.</p>
+</li>
+</ul>
+<ul>
+<li>F: this is a surprising result.</li>
+</ul>
+<ul>
+<li>T: Graph on page 6: how does that work? Some of the results seem better without training?</li>
+<li>F: Is it about random initialization of weights?</li>
+<li>T: WOuldn't that affect all networks (all colors in that diagram)? Here it seems to show one</li>
+</ul>
+<ul>
+<li>J: How are ANNs instantiated?</li>
+<li>D: stacks of Tensor addresses?</li>
+<li>T: ANNs are very high level abstractions of neurons, lots of details left out</li>
+<li>D: Glia cells.</li>
+<li>F: Jeff Hawkin's Numenta team try to mimic Glia.</li>
+</ul>
+<p>Digression on Theory of Mind paper by Kosinski
+Digression on how many GPUs Bill Gates has</p>
+<ul>
+<li>
+<p>F: They model experiments with children, verbally stated - e.g. Sammy has a box and puts a ball in it. What can Jane see?</p>
+</li>
+<li>
+<p>J: In the GPT demonstrations, you can see the model go back and forth on its beliefs as it reads the story, until it gets it right.</p>
+</li>
+<li>
+<p>T: which parts of the model did they correlate with FMRI or EEG? I didn't get this.</p>
+</li>
+</ul>
+<p>Digression about animal languages
+Digression about Wolfram Alpha, GPT4, and languages</p>
+<ul>
+<li>J: will future models learn math as they learn human languages?</li>
+</ul>
+<ul>
+<li>
+<p>D: Emergence of predictive processing in both humans and neural is beautiful</p>
+</li>
+<li>
+<p>J: the phrase that emergences here is reverse engineering</p>
+</li>
+<li>
+<p>D: I'm interested in how people get to emotional pathologies - like schizophrenic episodes</p>
+</li>
+<li>
+<p>J: One of my favorite papers is animal behavior, the basics of mood. Many animals have moods.</p>
+</li>
+<li>
+<p>D: Dr Lisa Barrett goes onto emotions - &quot;How Emotions are Made&quot;</p>
+</li>
+<li>
+<p>D: She has people holding concepts - axonal structures that develop over time.</p>
+</li>
+<li>
+<p>J: Low mood means the brain is skewed to predict that reward is <em>not</em> coming... elevated that the reward is coming. &quot;Stress bees exhibit pessimistic cognitive biases&quot; - there's an extremely low level account of mood.</p>
+</li>
+<li>
+<p>D: Cortisol ends up being the pessimistic.</p>
+</li>
+<li>
+<p>J: Low mood = times are bad = conserve energy, don't take risks.</p>
+</li>
+<li>
+<p>M: an underlying theme here is language based on predictive processing. Reminded me of Being You, and how he was talking about proprioception - is everything in the mind predictions?</p>
+</li>
+<li>
+<p>J: Mood is a prediction of reward, are our normal states also predictions? The world will be X way.</p>
+</li>
+<li>
+<p>F: Is this System 1 (impulsive) vs System 2 (logical) (Kahneman)?</p>
+</li>
+<li>
+<p>D: Where's memory in all of this?</p>
+</li>
+<li>
+<p>T: Is it not working memory in the model?</p>
+</li>
+<li>
+<p>J: Long term and working memory as two different parts of doing a task?</p>
+</li>
+<li>
+<p>F: the ChatGPT API requires you to resubmit the previous parts of the prompt.</p>
+</li>
+<li>
+<p>T: so we've spent the evening talking about similarities between biological and artificial networks, this is a clear difference...</p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="session-3-mind-in-motion"><a class="header" href="#session-3-mind-in-motion">Session 3: &quot;Mind in Motion&quot;</a></h1>
+<h2 id="may-16-2023--rowzzy-labs"><a class="header" href="#may-16-2023--rowzzy-labs">May 16 2023 @@ Rowzzy Labs</a></h2>
+<h2 id="attendees-dylan-tom-francesco-julio"><a class="header" href="#attendees-dylan-tom-francesco-julio">Attendees: Dylan, Tom, Francesco, Julio</a></h2>
+<p>Tom noted we had 4 / 5 average rating from previous events
+Last time, 3 people noted we frequently strayed off topic (tho open discussion called out as good!).  Tom suggested we try a 1 point, 2 point system: 1 finger up if you have something which follows current discussion, 2 if you want to start a new one</p>
+<p>We discussed Mind in Motion, by Barbara Tversky</p>
+<h3 id="toms-notes-2"><a class="header" href="#toms-notes-2">Tom’s notes</a></h3>
+<p>J: read most of it, a bit unnecessary detail
+D: reminded me of Hawkins, egocentricity
+T: Yes - hippocampus copy-pasted into neocortex
+J: why does the hippocampus do both memory and navigation?</p>
+<p>D: What's happening in dementia - is the homunculus fraying?
+J: There's different kinds; Alzheimer's, frontal, etc. Memory goes first? At some point they lose their orientation too
+D: Tversky talks about time as a dimension too - you have the grid
+F: Our sense of space is made of all the senses, it's supramodal. The blind have a good sense of space.</p>
+<p>J: Most interesting point, which fits with last time (comparing our intelligence with animals
+Connections she makes between language and spatial terms)
+T: Does the connection to LLMs go both ways? We use spatial metaphors in our language, LLMs learn spatial from language only.</p>
+<p>(Digression about Poker)</p>
+<p>J: Eckman talks about micro-expressions, deceit, muscle groups used in smiling, etc.</p>
+<p>T: I had trouble with her strong statements about e.g. graph representations of thoughts (p153)
+J: it's intuitive - concept diagrams are spatial. But are they helpful because they correspond to how the brain works?
+T: I don't think it can be... I'd expect concept maps to be radically more useful than other representations (table, list, etc) were they a great neural fit.</p>
+<p>F: In the video she talks about elements, she has iconic elements, metaphoric (scales representing justice), meaningful maps, symbolic. Mind maps extrapolate away distance. We put our minds into the world and we design it, we diagram the world.</p>
+<p>J: We diagram cities into grids.
+F: Do these simpler representations act as tools to help us communicate?
+T: So 2 explanations for use of simple representations: that they're spatially based, or conveniently lower bandwidth?</p>
+<p>D: allocentric, egocentric. Once a species could separate itself from the pack, and calories became easy, we no longer had to worry about smell, ideas like longevity of the species happened.</p>
+<p>F: She talks about the power of gestures a lot. Externalizes thought, helps you think.
+D: Gestures are amplitude (communication)
+D: Most of her was about nuances of conversation and how they're ingrained in our way of thinking. It's ontological. 
+J: Or about ordering, or communicating more with gestures. LLMs have zero access to this.</p>
+<p>J: Reading a book about space. Curious fact about English and Spanish. Deictic words - England has 2 for space - here and there. Spanish has 3: within reach, out of reach, afar.</p>
+<p>(Cultural differences around emotional expression)
+J: &quot;Crash landing on you&quot; - Netflix documentary about a South Korean beauty queen who hang-glides and crash lands in North Korea.
+D: Dance as a means of communication</p>
+<p>D: lots of the book seems culturally specfiic. I enjoyed Barrett's book more, it's less culturally specific.
+F: Only time she talks about culture in the video is when she talks about the directionality of space.
+D: When I see boats moving in the harbor, if they go right to left then I notice them more.
+J: Points to the effect of reading on us. It's a cultural fluke that our language goes left to right
+F: Relates to habits. Getting rid of habits is so hard...</p>
+<p>J: I'm using ChatGPT, if I ask for an answer in Arabic it starts from the right.
+T: Suspect that's the UI detecting Arabic characters and choosing to draw them right to left</p>
+<p>(Digression about GPT4)</p>
+<p>T: talk about Tiny Stories model - https://arxiv.org/abs/2305.07759
+F: BIMT paper: https://paperswithcode.com/paper/seeing-is-believing-brain-inspired-modular
+D: OpenAI used raters in Africa, India: https://time.com/6247678/openai-chatgpt-kenya-workers/</p>
+<p>(Dylan makes a rap about zoo animals)</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="session-4-building-machines-that-learn-and-think-like-people"><a class="header" href="#session-4-building-machines-that-learn-and-think-like-people">Session 4: &quot;Building Machines That Learn and Think Like People&quot;</a></h1>
+<h2 id="june-20-2023--hotel-emblem"><a class="header" href="#june-20-2023--hotel-emblem">June 20 2023 @ Hotel Emblem</a></h2>
+<h2 id="attendees-julio-shan-francesco-dylan-remote-tom"><a class="header" href="#attendees-julio-shan-francesco-dylan-remote-tom">Attendees: Julio, Shan, Francesco, Dylan (remote), Tom</a></h2>
+<p>We discussed Building Machines That Learn and Think Like People (Lake, Ullman, Tenenbaum and Gershman)</p>
+<h3 id="toms-notes-3"><a class="header" href="#toms-notes-3">Tom’s notes</a></h3>
+<p>J: nice, coherent paper. A few years old, also dated.
+… Defensive of neural networks while acknowledging their limitations - not resilient to perception or goal changes. Inefficient learning.
+… What’s secret sauce? Causal models; intuitive physics/psychology (infants understanding entities can be agents, are efficient), compositionality</p>
+<p>T: are intuitive physics/psychology an example of a causal model</p>
+<p>J: Can a neural network emulate a simulator? This blew my mind
+F: Does this connect to hw elements, substituting for a physics model in cars?
+S: I interpreted them as calling not for the neural network to emulate physics systems, but rather explicitly simulate physics and let the network operate on the output of the engine.
+… We know neural networks aren’t great at consistency. Analogy: give ChatGPT tools, they need grounding.
+… Not claiming we have a physics simulator in the brain, but rather you can access types of computation in the brain
+F: Refenrece to A Path Towards Autonomosu Machine Intelligence?
+… They have a perceptual model, world model</p>
+<p>S: Their answer for bridging from neural to symbolic is “simulate the physics”, skip the symbolic (but I claim that’s easy)
+J: We tend to think our psychology is based on grammar, models</p>
+<p>F: Many times they contrast neural models and humans</p>
+<p>J: How do self driving cars work - do they have an intuitive physics?
+D: They have that in there, yes. But not learned, or build from scratch.
+J: So we know how to make physics simulators
+D: We should consider this a solved problem
+J: Car knows where it is…
+D: Pet beaver videos of it piling </p>
+<p>F: When talking about intuitive psychology (p19) how do you adapt roles of agents, goals?
+.. Classic critique of 2016 reinforcement algorithm ?
+… Needs (p42) creativity
+S: Dylan defines creativity as entropy. But diffusion models are removal of entropy!
+… It’s more about removal of entropy than </p>
+<p>J: Definitions of creativity: generation, novelty, coherence
+S: Broad question: relationship between creativity and intelligence. Is it necessary - what do we know about more or less creative people?
+J: Hard to know who is creative
+T: Can see extreme artists?
+D: Artists often get hooked on e.g. dopamine things like heroin
+J: Is creativity about loosened constraints? Drug use etc
+… Punishment or reward during childhood has an effect.
+T: so we don’t know about the relationship
+D: Relationship to metaphor, analogy?</p>
+<p>J: Autonomous driving systems
+S: Yes, theory of mind can explain patterns of data</p>
+<p>[ GPT models and Theory of Mind ]</p>
+<p>Can cultural factors affect cognition
+T: relayed the noise-listening experiments from the Andy Clark book
+S: Experiments over noise-audio: would be interesting to see if the introduction of language allows hearing the whole transcript
+https://arxiv.org/pdf/2202.05262.pdf
+S: Saw him do a reading, but I think they got lucky</p>
+<p>F: Universal capacity for grammar?
+T: Chomksy’s universal grammar?
+S: Disproven.</p>
+<p>F: Can ChatGPT create a new language?
+T: https://maximumeffort.substack.com/p/i-taught-chatgpt-to-invent-a-language
+S: Attention and doing this via prompting seems straightforward.</p>
+<p>S: Do we need discretized bottlenecks inside networks? </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="session-5-the-experience-machine"><a class="header" href="#session-5-the-experience-machine">Session 5: &quot;The Experience Machine&quot;</a></h1>
+<h2 id="june-20-2023--hotel-emblem-1"><a class="header" href="#june-20-2023--hotel-emblem-1">June 20 2023 @ Hotel Emblem</a></h2>
+<h2 id="attendees-tom-julio-francesco-shaun-arnold-remote"><a class="header" href="#attendees-tom-julio-francesco-shaun-arnold-remote">Attendees: Tom, Julio, Francesco, Shaun, Arnold (remote)</a></h2>
+<p>We discussed The Experience Machine by Andy Clark</p>
+<h3 id="toms-notes-4"><a class="header" href="#toms-notes-4">Tom’s notes:</a></h3>
+<p>Arnie - MIT lab 1970s with Minsky, Pappert. Then NASA. The Mystery Spot, Santa Cruz
+J: predictive processing seems counterintuitive; intuitively perception seems direct. Persuasive rationales:
+Top-down wiring in the brain
+Information transmission efficiently
+J: Book could use some more experimental references justifying it
+S: His talks go into details of experiments - especially sound-related ones. Also explains visual illusions
+T: could provide an evolutionary advantage in terms of competition?
+J: Speed of reaction or action might do this too
+S: Fight or flight is a core reaction
+T: Cost of a false positive is less than the cost of a false negative
+F: Something I’d like to consider in my own life</p>
+<p>T: He makes a stronger link between perception and action than in previous books - action as a mechanism to remove prediction error.
+S: Yes, like a dog move its ears to listen…
+J: P71 quote about unifying action and prediction
+A: But you have to distort what prediction means to do this - is it a prediction or a goal?
+A: more of a syntactic critique than a theoretical one
+T: I felt the precision-estimator side of things was a bit of a homunculus</p>
+<p>S: You wouldn’t normally act before deciding what it is you’re seeing
+F: The book talks about biases in societal perception
+J: Is it fair to say “my goal is to drink” and predictive processing is a lower-level thing around guiding the action?
+T: homeostasis: you drink because you want to minimize future dehydration… evidence being that you stop feeling thirsty when you drink, not when the fluid reaches your body.
+S: System 1 and System 2?
+T: Clark seems to try and unify them into a single account…
+F: In LLMs, when you tell a LLM to do a task, or do it with chain-of-thought, it does better.</p>
+<p>F: some disorders of the mind come from a locked-in model
+A: very interested in his explanations of autism and schizophrenia
+J: he talks about chronic pain - easier to understand - and depression - which fits with CBT ideas of depression, you’re stuck predicting the future wrongly.
+A: his theory is that autistic people rate sensory information higher than their hypotheses… but he tests it by comparing to how regular people see Moody figures differently to autistic - and it’s the same. So they can’t be under weighing the hypothesis, they must be overweighting the sensory data.
+J: is it a net-zero thing?
+S: autistic friends lack social context…
+T: I’m stuck on Arnie’s zero-sum critique…
+J: Schizophrenia involves mistaken generation of highly weighted prediction errors
+A: he says that somehow schizophrenics do this, I don’t get it.
+S: we generate predictions in the mind while dreaming… do schizophrenics do this when awake, seeing threats?
+A: in dreams, you don’t pay any attention to error signals. All kinds of things happen without bothering you…
+S: If you look at how nerve cells form in a brain, it’s in columns. Schizophreniac nerve endings go in all sorts of directions, 
+T: This would be sources of more error, rather than stronger predictions?
+F: I’ve heard that hypersensitive people have more neuronal connections - insufficiently pruned? 
+J: It often develops at a time of life when there’s final pruning in the brain.
+J: strangeness in schizophrenic experience suggests unintended prediction errors.
+A: so you hear a voice, you’re overweighting your expectations.
+F: in delusional people, the brain is looking for evidence of radical hypotheses
+S: For PTSD sufferers, it’s similarly overweighted - someone with shell shock hears a window slam and panics
+J: This theory doesn’t explain why a schizophrenic person’s delusions are so often paranoid.
+T: could confer a survival advantage - overperception of threats?
+S: not as social creatures though. Is it about stronger connection to the limbic system - areas we don’t use during cognition? Stronger internal connections.
+A: feels to me that schizophrenics overweight prediction, not prediction error.
+J: psychosis goes in one direction: you’re Jesus Christ, or you caused an earthquake, and reject evidence to the contrary.</p>
+<p>T: As someone working in this area, how convincing did you find this chapter?
+J: I would often ask people to do experiments that disprove their own errors.
+S: Humans have more inputs than animals
+T: The example he gives about perceptions of dentist affecting perception of pain
+F: I used strong stimuli after an operation to modify my pain perception and avoid the use of opiates</p>
+<p>J: there’s a condition where people who lose their vision in old age hallucinate
+A: Go to flotation tanks!
+T: Oliver Sacks book, Musicophilia, has examples of musical hallucinations
+A: Predictive processing should have a solution here</p>
+<p>J: Aesthetic chills. Clark talks about a device to produce these.
+T: I find I get these with music, but the first few times I hear a song
+J: I guess we enjoy music in a way that animals don’t. Finely tuned pitch detectors? I have a book, Sweet Anticipation, a psychologists account of music: the doling out of surprise.
+S: Often it’s harmonies or where music is predictable. Music patterns and wave patterns align?
+J: Music pop music has an enjoyable cadential pattern 
+A: isn’t much more interesting if it’s more surprising?
+J: It’s a like a recipe and hot sauce - too little surprise and it’s bland, too much and it’s inedible
+A: aren’t we seeking novelty?
+T: Is this Friston’s free energy principle?
+A: Friston invented all this, Clark explains it
+(Digression about Friston)
+S: Minimizing risk is important for beings - music is informed by our minds trying to reach a point where you understand where you are.</p>
+<p>T: Clark talks about novelty-seeking as being improving ones self-predictions. So you need novelty to do this - can’t be done in a dark room.
+A: Species without curiosity don’t last long.
+T: Challenge: some organisms don’t need this (bacteria). What’s different about the ones that do?
+J: does the idea of curiosity being adaptive apply across the board, or do you need a level of behavioral complexity for it to pay off?
+A: Anything that has sexual selection has a bell-curve of traits, lots of variability - this is exploration. Need to look at it at a population level.
+S: Differs by species. Mice are paranoid. Chimpanzees are curious when unintimidated.
+J: anxious moods inhibits exploration, you retreat to safety. Less anxious mice are more inclined to explore</p>
+<p>T: chapter 5 on qualia, relating predictive states to qualia and drawing a connection.
+J: Found this insufficient to explain the qualia
+A: In the chapter he didn’t deal with the hard problem
+F: p120 he takes the side of Dennett. Qualia aren’t real but seem to be - but then seeming is the whole problem! The Guinness problem - your ascription of a quality to  a thing makes it a self-fulfilling property.
+S: a cockroach is born with 150k genes and is preprogrammed with all it needs
+T: Bees seem to have learned behavior, pain avoidance.
+J: Language is a good example - brains are wired when young, Infants can detect a wider range of consonants when you’re born.
+S: This goes back to the process of pruning in schizophrenia
+A: e.g. Japanese lack of distinction being l and r</p>
+<p>F: what about the final chapter on hacking?
+T: Placebo effects, etc.
+F: Not all conditions respond to placebo  - e.g OCD doesn’t, depression does
+S: Goes back to the self-model…</p>
+<p>F: also v interested in the connection between the brain and the cut
+F: Would like to find some brain/gut materials
+J: “The body has a mind of its own” is a relevant book
+A: On extended mind, people with dementia enrolling their environment into their mind
+S: Sadhu’s in India - control of systems, heart-beat, etc.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="libraryreferences"><a class="header" href="#libraryreferences">Library/References</a></h1>
+<script type="text/javascript">
+function defaultCopyTextToClipboard(text) {
+    var textArea = document.createElement("textarea");
+    textArea.value = text;
+
+    // Avoid scrolling to bottom
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    try {
+        var ok = document.execCommand('copy');
+        var msg = ok ? 'was ok' : 'failed';
+        console.log('Backing copy: Text copy was ' + msg);
+    } catch (err) {
+        console.error('Backing copy: Unable to copy text', err);
+    }
+
+    document.body.removeChild(textArea);
+}
+
+function copyToClipboard(text) {
+    if (!navigator.clipboard) {
+        defaultCopyTextToClipboard(text);
+        return;
+    }
+    navigator.clipboard.writeText(text).then(function() {
+        console.log('Text copied to clipboard');
+    }, function(err) {
+        console.error('Error copying text: ', err);
+    });
+}
+
+</script>
+<style>div.bib_div {
+    background-color: black;
+    color: grey;
+    border: 1px solid white;
+    padding: 2em;
+}</style>
+<div class="bib_div">
+<details data-key="clark2023" class=ref>
+<summary class=citation>
+<a id="clark2023">[clark2023]</a> - [[Andy Clark, ], ] - <a href="https://www.amazon.com/Experience-Machine-Minds-Predict-Reality/dp/1524748455" target="_blank"><cite>The Experience Machine:</cite></a>. - 2023.
+</summary>
+<section class=abstract>
+<h1 id="summaryabstract"><a class="header" href="#summaryabstract">Summary/Abstract</a></h1>
+<div>Widely acclaimed philosopher and cognitive scientist Andy Clark unpacks this provocative new theory that the brain is a powerful, dynamic prediction engine, mediating our experience of both body and world. From the most mundane experiences to the most sublime, reality as we know it is the complex synthesis of sensory information and expectation. Exploring its fascinating mechanics and remarkable implications for our lives, mental health, and society, Clark nimbly illustrates how the predictive brain sculpts all human experience. Chronic pain and mental illness are shown to involve subtle malfunctions of our unconscious predictions, pointing the way towards more effective, targeted treatments. Under renewed scrutiny, the very boundary between ourselves and the outside world dissolves, showing that we are as entangled with our environments as we are with our onboard memories, thoughts, and feelings. And perception itself is revealed to be something of a controlled hallucination.
+Unveiling the extraordinary explanatory power of the predictive brain, The Experience Machine is a mesmerizing window onto one of the most significant developments in our understanding of the mind.</div>
+</section>
+</details>
+<br/>
+</div>
+<div class="bib_div">
+<details data-key="seth2021" class=ref>
+<summary class=citation>
+<a id="seth2021">[seth2021]</a> - [[Anil Seth, ], ] - <a href="https://www.amazon.com/Being-You-New-Science-Consciousness/dp/1524742872" target="_blank"><cite>Being You: A New Science of Consciousness</cite></a>. - 2021.
+</summary>
+<section class=abstract>
+<h1 id="summaryabstract-1"><a class="header" href="#summaryabstract-1">Summary/Abstract</a></h1>
+<div>Anil Seth&#x27;s quest to understand the biological basis of conscious experience is one of the most exciting contributions to twenty-first-century science.
+What does it mean to “be you”—that is, to have a specific, conscious experience of the world around you and yourself within it? There may be no more elusive or fascinating question. Historically, humanity has considered the nature of consciousness to be a primarily spiritual or philosophical inquiry, but scientific research is now mapping out compelling biological theories and explanations for consciousness and selfhood.
+Now, internationally renowned neuroscience professor, researcher, and author Anil Seth is offers a window into our consciousness in BEING YOU: A New Science of Consciousness. Anil Seth is both a leading expert on the neuroscience of consciousness and one of most prominent spokespeople for this relatively new field of science. His radical argument is that we do not perceive the world as it objectively is, but rather that we are prediction machines, constantly inventing our world and correcting our mistakes by the microsecond, and that we can now observe the biological mechanisms in the brain that accomplish this process of consciousness.
+Seth has been interviewed for documentaries aired on the BBC, Netflix, and Amazon and podcasts by Sam Harris, Russell Brand, and Chris Anderson, and his 2017 TED Talk on the topic has been viewed over 11 million times, a testament to his uncanny ability to make unimaginably complex science accessible and entertaining.</div>
+</section>
+</details>
+<br/>
+</div>
+<div class="bib_div">
+<details data-key="barret2020" class=ref>
+<summary class=citation>
+<a id="barret2020">[barret2020]</a> - [[Lisa Feldman Barrett, ], ] - <a href="https://www.amazon.com/Seven-Half-Lessons-About-Brain/dp/035864559X" target="_blank"><cite>Seven and a Half Lessons About The Brain</cite></a>. - 2020.
+</summary>
+<section class=abstract>
+<h1 id="summaryabstract-2"><a class="header" href="#summaryabstract-2">Summary/Abstract</a></h1>
+<div>A recent and concise primer on the brain.</div>
+</section>
+</details>
+<br/>
+</div>
+<div class="bib_div">
+<details data-key="tverskyb2019" class=ref>
+<summary class=citation>
+<a id="tverskyb2019">[tverskyb2019]</a> - [[Barbara Tversky, ], ] - <a href="https://www.amazon.com/Mind-in-Motion-Barbara-Tversky-audiobook/dp/B07WD573XS" target="_blank"><cite>Mind in Motion: How Action Shapes Thought</cite></a>. - 2019.
+</summary>
+<section class=abstract>
+<h1 id="summaryabstract-3"><a class="header" href="#summaryabstract-3">Summary/Abstract</a></h1>
+<div>When we try to think about how we think, we can&#x27;t help but think of words. Indeed, some have called language the stuff of thought. But pictures are remembered far better than words, and describing faces, scenes, and events defies words. Anytime you take a shortcut or play chess or basketball or rearrange your furniture in your mind, you&#x27;ve done something remarkable: abstract thinking without words. 
+In Mind in Motion, psychologist Barbara Tversky shows that spatial cognition isn&#x27;t just a peripheral aspect of thought, but its very foundation, enabling us to draw meaning from our bodies and their actions in the world. Our actions in real space get turned into mental actions on thought, often spouting spontaneously from our bodies as gestures. Spatial thinking underlies creating and using maps, assembling furniture, devising football strategies, designing airports, understanding the flow of people, traffic, water, and ideas. Spatial thinking even underlies the structure and meaning of language: why we say we push ideas forward or tear them apart, why we&#x27;re feeling up or have grown far apart. 
+Like Thinking, Fast and Slow before it, Mind in Motion gives us a new way to think about how - and where - thinking takes place.</div>
+</section>
+</details>
+<br/>
+</div>
+<div class="bib_div">
+<details data-key="schrimpf_neural_2021" class=ref>
+<summary class=citation>
+<a id="schrimpf_neural_2021">[schrimpf_neural_2021]</a> - [[Schrimpf, Martin, ], [Blank, Idan Asher, ], [Tuckute, Greta, ], [Kauf, Carina, ], [Hosseini, Eghbal A., ], [Kanwisher, Nancy, ], [Tenenbaum, Joshua B., ], [Fedorenko, Evelina, ], ] - <a href="https://pnas.org/doi/full/10.1073/pnas.2105646118" target="_blank"><cite>The neural architecture of language: Integrative modeling converges on predictive processing</cite></a>. - 2021.
+</summary>
+<section class=abstract>
+<h1 id="summaryabstract-4"><a class="header" href="#summaryabstract-4">Summary/Abstract</a></h1>
+<div>Significance
+            Language is a quintessentially human ability. Research has long probed the functional architecture of language in the mind and brain using diverse neuroimaging, behavioral, and computational modeling approaches. However, adequate neurally-mechanistic accounts of how meaning might be extracted from language are sorely lacking. Here, we report a first step toward addressing this gap by connecting recent artificial neural networks from machine learning to human recordings during language processing. We find that the most powerful models predict neural and behavioral responses across different datasets up to noise levels. Models that perform better at predicting the next word in a sequence also better predict brain measurements—providing computationally explicit evidence that predictive processing fundamentally shapes the language comprehension mechanisms in the brain.
+          , 
+            The neuroscience of perception has recently been revolutionized with an integrative modeling approach in which computation, brain function, and behavior are linked across many datasets and many computational models. By revealing trends across models, this approach yields novel insights into cognitive and neural mechanisms in the target domain. We here present a systematic study taking this approach to higher-level cognition: human language processing, our species’ signature cognitive skill. We find that the most powerful “transformer” models predict nearly 100\% of explainable variance in neural responses to sentences and generalize across different datasets and imaging modalities (functional {MRI} and electrocorticography). Models’ neural fits (“brain score”) and fits to behavioral responses are both strongly correlated with model accuracy on the next-word prediction task (but not other language tasks). Model architecture appears to substantially contribute to neural fit. These results provide computationally explicit evidence that predictive processing fundamentally shapes the language comprehension mechanisms in the human brain.</div>
+</section>
+</details>
+<br/>
+</div>
+<div class="bib_div">
+<details data-key="lake_building_2016" class=ref>
+<summary class=citation>
+<a id="lake_building_2016">[lake_building_2016]</a> - [[Lake, Brenden M., ], [Ullman, Tomer D., ], [Tenenbaum, Joshua B., ], [Gershman, Samuel J., ], ] - <a href="http://arxiv.org/abs/1604.00289" target="_blank"><cite>Building Machines That Learn and Think Like People</cite></a>. - 2016.
+</summary>
+<section class=abstract>
+<h1 id="summaryabstract-5"><a class="header" href="#summaryabstract-5">Summary/Abstract</a></h1>
+<div>Recent progress in artificial intelligence ({AI}) has renewed interest in building systems that learn and think like people. Many advances have come from using deep neural networks trained end-to-end in tasks such as object recognition, video games, and board games, achieving performance that equals or even beats humans in some respects. Despite their biological inspiration and performance achievements, these systems differ from human intelligence in crucial ways. We review progress in cognitive science suggesting that truly human-like learning and thinking machines will have to reach beyond current engineering trends in both what they learn, and how they learn it. Specifically, we argue that these machines should (a) build causal models of the world that support explanation and understanding, rather than merely solving pattern recognition problems; (b) ground learning in intuitive theories of physics and psychology, to support and enrich the knowledge that is learned; and (c) harness compositionality and learning-to-learn to rapidly acquire and generalize knowledge to new tasks and situations. We suggest concrete challenges and promising routes towards these goals that can combine the strengths of recent neural network advances with more structured cognitive models.</div>
+</section>
+</details>
+<br/>
+</div>
+<div class="bib_div">
+<details data-key="clark_whatever_2013" class=ref>
+<summary class=citation>
+<a id="clark_whatever_2013">[clark_whatever_2013]</a> - [[Clark, Andy, ], ] - <a href="https://www.cambridge.org/core/product/identifier/S0140525X12000477/type/journal_article" target="_blank"><cite>Whatever next? Predictive brains, situated agents, and the future of cognitive science</cite></a>. - 2013.
+</summary>
+<section class=abstract>
+<h1 id="summaryabstract-6"><a class="header" href="#summaryabstract-6">Summary/Abstract</a></h1>
+<div>Brains, it has recently been argued, are essentially prediction machines. They are bundles of cells that support perception and action by constantly attempting to match incoming sensory inputs with top-down expectations or predictions. This is achieved using a hierarchical generative model that aims to minimize prediction error within a bidirectional cascade of cortical processing. Such accounts offer a unifying model of perception and action, illuminate the functional role of attention, and may neatly capture the special contribution of cortical processing to adaptive success. This target article critically examines this “hierarchical prediction machine” approach, concluding that it offers the best clue yet to the shape of a uniﬁed science of mind and action. Sections 1 and 2 lay out the key elements and implications of the approach. Section 3 explores a variety of pitfalls and challenges, spanning the evidential, the methodological, and the more properly conceptual. The paper ends (sections 4 and 5) by asking how such approaches might impact our more general vision of mind, experience, and agency.</div>
+</section>
+</details>
+<br/>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+                        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+                
+    </body>
+</html>
