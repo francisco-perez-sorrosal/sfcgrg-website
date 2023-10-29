@@ -4,6 +4,8 @@
 
 ## Notes
 
+[Original Notes by Tom](https://docs.google.com/document/d/10njTy58O7uMlI0O2tezKY7Iepf-kTBZusdg4q85erpQ/edit#heading=h.54u8ki1xp2e7)
+
 [Sessions 1](notes/session_1.md)
 
 [Sessions 2](notes/session_2.md)

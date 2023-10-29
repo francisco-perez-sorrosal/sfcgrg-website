@@ -10,7 +10,7 @@
 
 [Notes](./notes/session_1.md)
 
-## Session 2 (2023-04-18) "The neural architecture of language: Integrative modeling converges on predictive processing"
+## Session 2 (2023-04-18) "The neural architecture of language: Integrative modeling converges on predictive processing" @@schrimpf_neural_2021
 
 [Meetup link](https://www.meetup.com/san-francisco-cognitive-science-meetup-group/events/292570342/)
 
@@ -24,7 +24,7 @@
 
 [Book Link](https://www.amazon.com/Mind-Motion-Action-Shapes-Thought/dp/046509306X)
 
-## Session 4 (2023-06-20) "Building machines that learn and think like people" 
+## Session 4 (2023-06-20) "Building machines that learn and think like people" @@lake_building_2016
 
 **Author/s** *Tenenbaum and Gershman, et al.*
 
@@ -39,3 +39,26 @@
 [Meetup link](https://www.meetup.com/san-francisco-cognitive-science-meetup-group/events/293684215/)
 
 [Book Link](https://www.amazon.com/Experience-Machine-Minds-Predict-Reality/dp/1524748455)
+
+
+## Session 6 (2023-09-26) "Whatever next? Predictive brains, situated agents, and the future of cognitive science" @@clark_whatever_2013
+
+**Author/s** *Andy Clark + Others*
+
+[Meetup link](https://www.meetup.com/san-francisco-cognitive-science-meetup-group/events/294399059/)
+
+[Paper Link](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/33542C736E17E3D1D44E8D03BE5F4CD9/S0140525X12000477a.pdf/div-class-title-whatever-next-predictive-brains-situated-agents-and-the-future-of-cognitive-science-div.pdf)
+
+[Notes](./notes/session_6.md)
+
+
+## Session 7 (2023-10-17) "Seven and a Half Lessons About the Brain" @@barret2020
+
+
+**Author/s** *Lisa Feldman Barret*
+
+[Meetup link](https://www.meetup.com/san-francisco-cognitive-science-meetup-group/events/295498934/)
+
+[Book Link](https://www.amazon.com/Seven-Half-Lessons-About-Brain/dp/035864559X/ref=sr_1_3?crid=MP8NKCU5JSAQ&keywords=feldman+barrett&qid=1691874145&s=books&sprefix=feldmand+barre%2Cstripbooks%2C318&sr=1-3)
+
+[Notes](./notes/session_7.md)
